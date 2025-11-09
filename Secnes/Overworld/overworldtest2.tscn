@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://mlicbungsckf" path="res://Secnes/Overworld/main/overworldtest_2.gd" id="1_s30ws"]
 [ext_resource type="PackedScene" uid="uid://bkirfroq7hovb" path="res://Secnes/Overworld/saveui/save.tscn" id="2_d6w10"]
-[ext_resource type="PackedScene" uid="uid://cg1x7mumcpbgk" path="res://System/typer/Typerwriter.tscn" id="3_mhekw"]
+[ext_resource type="PackedScene" uid="uid://cg1x7mumcpbgk" path="res://Secnes/Overworld/dialog/OverworldTyperwriter.tscn" id="3_mhekw"]
 [ext_resource type="Shader" uid="uid://d0w542jgk4iuo" path="res://Shader/vhs.gdshader" id="4_gwr5e"]
 [ext_resource type="PackedScene" uid="uid://bewv6rr5wbnj6" path="res://Secnes/Overworld/player/player.tscn" id="5_lq73e"]
 [ext_resource type="PackedScene" uid="uid://djq1yibe5lx4e" path="res://Secnes/Overworld/camera/cameraow.tscn" id="6_1vvrl"]

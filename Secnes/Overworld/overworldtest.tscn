@@ -1,10 +1,10 @@
-[gd_scene load_steps=17 format=4 uid="uid://cucxyx56rynbp"]
+[gd_scene load_steps=18 format=4 uid="uid://cucxyx56rynbp"]
 
 [ext_resource type="PackedScene" uid="uid://bewv6rr5wbnj6" path="res://Secnes/Overworld/player/player.tscn" id="1_ped3f"]
 [ext_resource type="Script" uid="uid://d3dc4wk6m4qp3" path="res://Secnes/Overworld/main/over_world_test.gd" id="1_v8c2f"]
 [ext_resource type="PackedScene" uid="uid://bkirfroq7hovb" path="res://Secnes/Overworld/saveui/save.tscn" id="2_lvp85"]
 [ext_resource type="PackedScene" uid="uid://djq1yibe5lx4e" path="res://Secnes/Overworld/camera/cameraow.tscn" id="2_o53oj"]
-[ext_resource type="PackedScene" uid="uid://cg1x7mumcpbgk" path="res://System/typer/Typerwriter.tscn" id="2_se2aw"]
+[ext_resource type="PackedScene" uid="uid://cg1x7mumcpbgk" path="res://Secnes/Overworld/dialog/OverworldTyperwriter.tscn" id="2_se2aw"]
 [ext_resource type="Shader" uid="uid://d0w542jgk4iuo" path="res://Shader/vhs.gdshader" id="2_ss154"]
 [ext_resource type="Texture2D" uid="uid://bbr5sbfly8iik" path="res://Sprites/test/unnamed_3584.png" id="5_v8c2f"]
 [ext_resource type="Texture2D" uid="uid://bow8tefd75e18" path="res://Sprites/test/unnamed_3585.png" id="6_dj7u2"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bu6vy0e8qyfi4" path="res://Sprites/test/unnamed_3586.png" id="9_m8pe7"]
 [ext_resource type="Texture2D" uid="uid://c6xydmgdc6j5m" path="res://Sprites/test/unnamed_3587.png" id="10_nudgx"]
 [ext_resource type="TileSet" uid="uid://bkqunf3txn7hp" path="res://Sprites/tileset/newhomeroad.tres" id="15_nsap0"]
+[ext_resource type="PackedScene" uid="uid://ckiiqqwohh70k" path="res://Secnes/Overworld/objects/save/save.tscn" id="16_hu6ca"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_se2aw"]
 shader = ExtResource("2_ss154")
@@ -141,5 +142,9 @@ limit_bottom = 480
 
 [node name="Hurt" parent="." instance=ExtResource("6_dmgo5")]
 position = Vector2(284, 296)
+
+[node name="Save" parent="." instance=ExtResource("16_hu6ca")]
+position = Vector2(473, 308)
+scale = Vector2(2, 2)
 
 [editable path="Hurt"]
