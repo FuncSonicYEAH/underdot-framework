@@ -41,11 +41,13 @@ func _process(delta: float) -> void:
 
 
 func _handle_input() -> void:
-	if Input.is_action_just_pressed("ui_left"):
+	if Input.is_action_just_pressed("left"):
+		Sounds.choose.play()
 		choose = clamp(choose - 1, 0, 1)
-	elif Input.is_action_just_pressed("ui_right"):
+	elif Input.is_action_just_pressed("right"):
+		Sounds.choose.play()
 		choose = clamp(choose + 1, 0, 1)
-	elif Input.is_action_just_pressed("ui_accept") and not exit:
+	elif Input.is_action_just_pressed("enter") and not exit:
 		match choose:
 			0: _do_save()
 			1: _do_cancel()
@@ -57,6 +59,7 @@ func _update_heart_position() -> void:
 
 
 func _do_save() -> void:
+	Sounds.save.play()
 	Global.player.data1.is_save = true
 	Global.player.data1.room_save_name = Global.player.room_name
 	Global.player.data1.save_room = get_tree().current_scene.scene_file_path

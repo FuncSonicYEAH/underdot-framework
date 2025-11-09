@@ -23,6 +23,7 @@ func Select():
 		if press > 1: 
 			match choice:
 				0:
+					Sounds.intro.stop()
 					get_tree().change_scene_to_file(Global.player.data1.save_room)
 				2:
 					main.MenuMode = main.mode.setting

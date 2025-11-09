@@ -18,4 +18,6 @@ func tran_text():
 func press_enter():
 	if Input.is_action_just_pressed("enter") and onmain.MenuMode == onmain.mode.intro and main.chooser == 0:
 		press += 1
-		if press > 1: Fade.fade_config("fade_out", "res://Secnes/Overworld/overworldtest.tscn")
+		if press > 1: 
+			Sounds.intro.stop()
+			Fade.fade_config("fade_out", "res://Secnes/Overworld/overworldtest.tscn")

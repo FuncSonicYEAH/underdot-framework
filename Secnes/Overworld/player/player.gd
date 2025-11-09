@@ -144,7 +144,9 @@ func play_animation(prefix: String) -> void:
 func player_hurt(damage: int, knockback: bool = true) -> void:
 	if is_invincible or get_player_hp() <= 0:
 		return
-
+	
+	Sounds.hit.play()
+	
 	set_player_hp(get_player_hp() - damage)
 	show_hurt_ui()
 	if knockback:

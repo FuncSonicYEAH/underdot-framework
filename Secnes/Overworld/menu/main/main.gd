@@ -21,8 +21,10 @@ func select():
 		choice = 0
 	
 	if Input.is_action_just_pressed("up"):
+		Sounds.choose.play()
 		choice -= 1
 	elif Input.is_action_just_pressed("down"):
+		Sounds.choose.play()
 		choice += 1
 
 func heart_position():

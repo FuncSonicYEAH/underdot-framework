@@ -3,6 +3,7 @@ extends Control
 @onready var main = $".."
 
 func _ready() -> void :
+	Sounds.logo.play()
 	$AnimationPlayer.play("d1")
 
 

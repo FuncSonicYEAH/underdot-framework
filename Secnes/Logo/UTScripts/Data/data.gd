@@ -2,17 +2,17 @@ extends Control
 
 @onready var main = $".."
 var mode = "inputing"
+var has_run := false
 
 func _process(delta: float) -> void :
 	nodemode()
-	#exit()
+	if main.MenuMode == main.mode.datamenu:
+		if not has_run:
+			Sounds.intro.play()
+			has_run = true  # 标记为已运行
 
 func nodemode():
 	if main.MenuMode == main.mode.datamenu:
 		visible = true
 	else:
 		visible = false
-
-func exit():
-	if Input.is_action_just_pressed("back"):
-		main.MenuMode = main.mode.intro

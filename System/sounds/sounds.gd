@@ -17,3 +17,5 @@ extends Node
 @onready var encounter_3: AudioStreamPlayer = $encounter_3
 @onready var gasterintro: AudioStreamPlayer = $gasterintro
 @onready var gasterfire: AudioStreamPlayer = $gasterfire
+@onready var save: AudioStreamPlayer = $save
+@onready var intro: AudioStreamPlayer = $intro
