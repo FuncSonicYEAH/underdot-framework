@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckiiqqwohh70k"]
+
+[ext_resource type="Script" uid="uid://cy0o0a0rkvs0r" path="res://Secnes/Overworld/objects/save/save.gd" id="1_swpds"]
+[ext_resource type="Texture2D" uid="uid://dmeka3llfq22k" path="res://Sprites/overworld/Save/1.png" id="2_dqef8"]
+[ext_resource type="Texture2D" uid="uid://dvnx8ubquorno" path="res://Sprites/overworld/Save/2.png" id="3_c5yrb"]
+[ext_resource type="Script" uid="uid://ej5ot762pedy" path="res://Secnes/Overworld/objects/save/sprite.gd" id="4_btb1q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ss154"]
+size = Vector2(16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3sr5b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_dqef8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_c5yrb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uuak1"]
+size = Vector2(13, 13)
+
+[node name="Save" type="Area2D"]
+script = ExtResource("1_swpds")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ss154")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_3sr5b")
+script = ExtResource("4_btb1q")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_uuak1")

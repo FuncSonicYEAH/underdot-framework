@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdi8ba2ni1nfs"]
+
+[ext_resource type="Script" uid="uid://cv20g01gs4rfi" path="res://Secnes/Battle/heart/state.gd" id="1_xekbe"]
+[ext_resource type="Texture2D" uid="uid://6b0gndkvcw3k" path="res://Sprites/battle/ut-heart.png" id="2_3xbye"]
+[ext_resource type="Script" uid="uid://bvdhdbrap60p6" path="res://Secnes/Battle/heart/Mode/red.gd" id="2_mkdml"]
+[ext_resource type="Script" uid="uid://r67asxc8lf6h" path="res://Secnes/Battle/heart/Mode/blue.gd" id="4_12v7a"]
+[ext_resource type="Texture2D" uid="uid://caw300wpqqta4" path="res://Sprites/battle/ut-heart2.png" id="5_lu4ge"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wje65"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3xbye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lu4ge")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xekbe"]
+size = Vector2(16, 16)
+
+[node name="Heart" type="CharacterBody2D"]
+script = ExtResource("1_xekbe")
+
+[node name="red" type="Node" parent="."]
+script = ExtResource("2_mkdml")
+
+[node name="blue" type="Node" parent="."]
+script = ExtResource("4_12v7a")
+
+[node name="Heart" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+sprite_frames = SubResource("SpriteFrames_wje65")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_xekbe")
+debug_color = Color(1, 1, 1, 0.41960785)

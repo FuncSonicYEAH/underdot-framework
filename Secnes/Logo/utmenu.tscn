@@ -1,0 +1,400 @@
+[gd_scene load_steps=29 format=3 uid="uid://bibxna0j4eevt"]
+
+[ext_resource type="Script" uid="uid://dltl5xonjqmvt" path="res://Secnes/Logo/Main.gd" id="1"]
+[ext_resource type="Script" uid="uid://chmxtnlgc1nom" path="res://Secnes/Logo/UTScripts/logo.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://u6aduyfg06v6" path="res://Sprites/splash.png" id="3"]
+[ext_resource type="FontFile" uid="uid://c4egpres5rovo" path="res://Fonts/ui.ttf" id="4"]
+[ext_resource type="Script" uid="uid://uey8iir6ewo" path="res://Secnes/Logo/UTScripts/Intro/intro.gd" id="5"]
+[ext_resource type="FontVariation" uid="uid://b1mfr2s2oeq2a" path="res://Fonts/DTM-Spacing/DTM-Intro.tres" id="6_4cvvo"]
+[ext_resource type="Script" uid="uid://dl55vccwplkfm" path="res://Secnes/Logo/UTScripts/Intro/intro_menu.gd" id="7"]
+[ext_resource type="Script" uid="uid://ced3bnndfh4c8" path="res://Secnes/Logo/UTScripts/Intro/label_1.gd" id="8"]
+[ext_resource type="Script" uid="uid://bl0l1jcetje2" path="res://Secnes/Logo/UTScripts/Intro/label_2.gd" id="9"]
+[ext_resource type="Script" uid="uid://dwfreyq70jy08" path="res://Secnes/Logo/UTScripts/Setting/setting.gd" id="11"]
+[ext_resource type="Script" uid="uid://cbvh15sabfi73" path="res://Secnes/Logo/UTScripts/Setting/settings_main.gd" id="11_wofiq"]
+[ext_resource type="FontFile" uid="uid://dm4bqw5xv1ryg" path="res://Fonts/DTM-Sans.otf" id="12"]
+[ext_resource type="Script" uid="uid://dqwulbc407778" path="res://Secnes/Logo/UTScripts/Setting/left/s_2.gd" id="13"]
+[ext_resource type="Script" uid="uid://c4cgj375qkwhk" path="res://Secnes/Logo/UTScripts/Setting/left/s_3.gd" id="14"]
+[ext_resource type="Script" uid="uid://ojp6ign2an0o" path="res://Secnes/Logo/UTScripts/Name/name.gd" id="15"]
+[ext_resource type="Script" uid="uid://litwivtg87mn" path="res://Secnes/Logo/UTScripts/Setting/left/s_6.gd" id="15_fmbk3"]
+[ext_resource type="Shader" uid="uid://d0w542jgk4iuo" path="res://Shader/vhs.gdshader" id="16"]
+[ext_resource type="Script" uid="uid://dyg8w6e4j2dio" path="res://Secnes/Logo/UTScripts/Setting/right/s_2.gd" id="16_4l5qq"]
+[ext_resource type="Script" uid="uid://ws58vwlieuk2" path="res://Secnes/Logo/UTScripts/Data/data.gd" id="16_46ffj"]
+[ext_resource type="Texture2D" uid="uid://dlabfaibbkxab" path="res://Sprites/datascreen/bg_area.png" id="17_v2tkx"]
+[ext_resource type="Script" uid="uid://di7wn0w4mvled" path="res://Secnes/Logo/UTScripts/Setting/right/s_3.gd" id="17_wvfti"]
+[ext_resource type="Script" uid="uid://5werjvngcldg" path="res://Secnes/Logo/UTScripts/Data/text.gd" id="18_v2tkx"]
+[ext_resource type="Script" uid="uid://cw0kpuuqh62vu" path="res://Secnes/Logo/UTScripts/Setting/right/s_4.gd" id="18_y2gh4"]
+[ext_resource type="Script" uid="uid://cxgx14rhihk3g" path="res://Secnes/Logo/UTScripts/Data/choose.gd" id="19_f6a0k"]
+
+[sub_resource type="Animation" id="Animation_bgbrh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_02ki7"]
+resource_name = "d1"
+length = 2.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.3, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_55tt7"]
+_data = {
+&"RESET": SubResource("Animation_bgbrh"),
+&"d1": SubResource("Animation_02ki7")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l6gr6"]
+shader = ExtResource("16")
+shader_parameter/wiggle = 0.0499999988824
+shader_parameter/wiggle_speed = 23.0
+shader_parameter/smear = 1.50000007125
+shader_parameter/blur_samples = 15
+
+[node name="UNDERTALE" type="Node2D"]
+script = ExtResource("1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 648.0
+offset_bottom = 482.0
+color = Color(0, 0, 0, 1)
+
+[node name="Logo" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("2")
+
+[node name="Splash" type="Sprite2D" parent="Logo"]
+position = Vector2(320, 229)
+texture = ExtResource("3")
+
+[node name="Label" type="Label" parent="Logo"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 200.0
+offset_top = 352.0
+offset_right = 440.0
+offset_bottom = 375.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.470588, 0.470588, 0.470588, 1)
+theme_override_fonts/font = ExtResource("4")
+text = "[PRESS Z OR ENTER]"
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Logo"]
+libraries = {
+&"": SubResource("AnimationLibrary_55tt7")
+}
+
+[node name="Intro" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("5")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Intro"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 36.0
+offset_right = 528.0
+offset_bottom = 404.0
+theme_override_colors/default_color = Color(0.713726, 0.713726, 0.713726, 1)
+theme_override_fonts/normal_font = ExtResource("6_4cvvo")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "intro_introduction"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Intro"]
+layout_mode = 0
+offset_left = 176.0
+offset_top = 340.0
+offset_right = 400.0
+offset_bottom = 428.0
+script = ExtResource("7")
+
+[node name="Label1" type="Label" parent="Intro/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 27
+text = "intro_begin"
+script = ExtResource("8")
+
+[node name="Label2" type="Label" parent="Intro/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 27
+text = "intro_settings"
+script = ExtResource("9")
+
+[node name="Copylight" type="Label" parent="Intro"]
+layout_mode = 0
+offset_top = 451.0
+offset_right = 640.0
+offset_bottom = 482.0
+theme_override_colors/font_color = Color(0.470588, 0.470588, 0.470588, 1)
+theme_override_constants/paragraph_spacing = -6
+theme_override_fonts/font = ExtResource("4")
+text = "UNDERTALE BY TOBY FOX & TIMMIE CHANG 2015 - 2025
+UNDERDOT ENGINE BY UNKNOWNUNKNOWN 2025 - 2025"
+horizontal_alignment = 1
+
+[node name="Settings" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("11_wofiq")
+
+[node name="Color" type="ColorRect" parent="Settings"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 640.0
+offset_bottom = 480.0
+color = Color(0, 0, 0, 0.745098)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 149.0
+offset_top = 48.0
+offset_right = 490.0
+offset_bottom = 415.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11")
+
+[node name="S1" type="Label" parent="Settings/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/paragraph_spacing = -20
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 40
+text = "setting_title"
+horizontal_alignment = 1
+
+[node name="S2" type="Label" parent="Settings/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 27
+text = "setting_window"
+script = ExtResource("13")
+
+[node name="S3" type="Label" parent="Settings/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 27
+text = "setting_fullscreen"
+script = ExtResource("14")
+
+[node name="S4" type="Label" parent="Settings/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 27
+text = "setting_lang"
+script = ExtResource("15_fmbk3")
+
+[node name="S5" type="Label" parent="Settings/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 27
+text = "EDITING"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 149.0
+offset_top = 130.0
+offset_right = 490.0
+offset_bottom = 497.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="S2" type="Label" parent="Settings/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 27
+text = "<>"
+horizontal_alignment = 2
+script = ExtResource("16_4l5qq")
+
+[node name="S3" type="Label" parent="Settings/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 27
+text = "<>"
+horizontal_alignment = 2
+script = ExtResource("17_wvfti")
+
+[node name="S4" type="Label" parent="Settings/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 27
+text = "<>"
+horizontal_alignment = 2
+script = ExtResource("18_y2gh4")
+
+[node name="Name" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 480.0
+script = ExtResource("15")
+
+[node name="tips" type="Label" parent="Name"]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 48.0
+offset_right = 456.0
+offset_bottom = 104.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 26
+text = "为坠落的人类取名"
+horizontal_alignment = 1
+
+[node name="Data" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("16_46ffj")
+
+[node name="BgArea" type="Sprite2D" parent="Data"]
+position = Vector2(321, 104)
+scale = Vector2(2, 2)
+texture = ExtResource("17_v2tkx")
+
+[node name="Text" type="Control" parent="Data"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("18_v2tkx")
+
+[node name="Name" type="Label" parent="Data/Text"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 123.0
+offset_right = 247.0
+offset_bottom = 157.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 27
+text = "NAME"
+
+[node name="Lv" type="Label" parent="Data/Text"]
+layout_mode = 0
+offset_left = 277.0
+offset_top = 123.0
+offset_right = 378.0
+offset_bottom = 157.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 27
+text = "LV 0"
+
+[node name="Time" type="Label" parent="Data/Text"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 122.0
+offset_right = 541.0
+offset_bottom = 156.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 27
+text = "0:00"
+
+[node name="Room" type="Label" parent="Data/Text"]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 158.0
+offset_right = 247.0
+offset_bottom = 192.0
+theme_override_constants/line_spacing = -10
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 27
+text = "ROOM"
+
+[node name="choose" type="Control" parent="Data"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("19_f6a0k")
+
+[node name="Continue" type="Label" parent="Data/choose"]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 212.0
+offset_right = 286.0
+offset_bottom = 252.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 27
+text = "intro_continue"
+
+[node name="Reset" type="Label" parent="Data/choose"]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 212.0
+offset_right = 480.0
+offset_bottom = 252.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 27
+text = "intro_reset"
+horizontal_alignment = 1
+
+[node name="Settings" type="Label" parent="Data/choose"]
+layout_mode = 0
+offset_left = 265.0
+offset_top = 252.0
+offset_right = 378.0
+offset_bottom = 323.0
+theme_override_fonts/font = ExtResource("12")
+theme_override_font_sizes/font_size = 27
+text = "intro_settings"
+
+[node name="Copylight2" type="Label" parent="Data"]
+layout_mode = 0
+offset_top = 451.0
+offset_right = 640.0
+offset_bottom = 482.0
+theme_override_colors/font_color = Color(0.470588, 0.470588, 0.470588, 1)
+theme_override_constants/paragraph_spacing = -6
+theme_override_fonts/font = ExtResource("4")
+text = "UNDERTALE BY TOBY FOX & TIMMIE CHANG 2015 - 2025
+UNDERDOT ENGINE BY UNKNOWNUNKNOWN 2025 - 2025"
+horizontal_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_l6gr6")
+offset_right = 640.0
+offset_bottom = 480.0

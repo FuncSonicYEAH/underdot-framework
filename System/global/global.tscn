@@ -1,0 +1,37 @@
+[gd_scene load_steps=10 format=3 uid="uid://bcbgujv4s8nop"]
+
+[ext_resource type="Script" uid="uid://3nvf1v4slbh2" path="res://System/global/setting/global.gd" id="1_ch7xq"]
+[ext_resource type="Script" uid="uid://bghqg5evxjbv2" path="res://System/global/setting/player.gd" id="2_8ww4e"]
+[ext_resource type="Script" uid="uid://sem8ouhu1nte" path="res://System/global/setting/settings.gd" id="3_80ogw"]
+[ext_resource type="Script" uid="uid://dyp5tilelpwc8" path="res://System/global/gamedata/gamedata_1.gd" id="3_rhtsq"]
+[ext_resource type="Script" uid="uid://d1rpjosukrjrs" path="res://System/global/setting/state.gd" id="4_rhtsq"]
+[ext_resource type="Script" uid="uid://bxuyuqlvuaw4s" path="res://System/global/gamedata/gamedata_2.gd" id="4_sr88c"]
+[ext_resource type="Script" uid="uid://cihymy0h7hrxt" path="res://System/global/setting/index.gd" id="5_sr88c"]
+[ext_resource type="Script" uid="uid://5uureuvcp6qk" path="res://System/global/gamedata/gamedata_3.gd" id="5_ygutt"]
+[ext_resource type="PackedScene" uid="uid://bmphp2t487gy1" path="res://System/camera/camera.tscn" id="6_8ww4e"]
+
+[node name="Global" type="Node2D"]
+script = ExtResource("1_ch7xq")
+
+[node name="Player" type="Node" parent="."]
+script = ExtResource("2_8ww4e")
+
+[node name="Gamedata1" type="Node" parent="Player"]
+script = ExtResource("3_rhtsq")
+
+[node name="Gamedata2" type="Node" parent="Player"]
+script = ExtResource("4_sr88c")
+
+[node name="Gamedata3" type="Node" parent="Player"]
+script = ExtResource("5_ygutt")
+
+[node name="Settings" type="Node" parent="."]
+script = ExtResource("3_80ogw")
+
+[node name="State" type="Node" parent="."]
+script = ExtResource("4_rhtsq")
+
+[node name="Index" type="Node" parent="."]
+script = ExtResource("5_sr88c")
+
+[node name="Camera" parent="." instance=ExtResource("6_8ww4e")]

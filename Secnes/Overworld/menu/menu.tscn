@@ -1,0 +1,178 @@
+[gd_scene load_steps=16 format=3 uid="uid://sailyk6smwaj"]
+
+[ext_resource type="Script" uid="uid://de6bv62ajwj1x" path="res://Secnes/Overworld/menu/menu.gd" id="1_6xy6t"]
+[ext_resource type="Texture2D" uid="uid://cehri46rfmq1t" path="res://Sprites/overworld/menu_up.png" id="1_mjk6w"]
+[ext_resource type="Script" uid="uid://ca0jnm61p0vx5" path="res://Secnes/Overworld/menu/main/menu.gd" id="2_17q2m"]
+[ext_resource type="LabelSettings" uid="uid://celcj5n0w6j5b" path="res://Styte/labelstyte.tres" id="2_m68np"]
+[ext_resource type="Texture2D" uid="uid://2g03xw5mie85" path="res://Sprites/overworld/menu_down.png" id="2_xbtv2"]
+[ext_resource type="Script" uid="uid://blngfmbpxpnl2" path="res://Secnes/Overworld/menu/main/name.gd" id="3_4otcf"]
+[ext_resource type="Texture2D" uid="uid://crxice6hem8fe" path="res://Sprites/overworld/heart_ow.png" id="5_4otcf"]
+[ext_resource type="Script" uid="uid://dpy21p5k3bavw" path="res://Secnes/Overworld/menu/main/main.gd" id="5_dm3q2"]
+[ext_resource type="FontFile" uid="uid://q07hnrecj5p7" path="res://Fonts/hud.ttf" id="5_x5wvu"]
+[ext_resource type="Script" uid="uid://fct31ymgglbt" path="res://Secnes/Overworld/menu/main/base_stat.gd" id="6_8k8fj"]
+[ext_resource type="Texture2D" uid="uid://jlo3b4kq82j8" path="res://Sprites/overworld/item.png" id="7_ihomd"]
+[ext_resource type="LabelSettings" uid="uid://384aj5vbbkb" path="res://Styte/labelstylesans.tres" id="8_17q2m"]
+[ext_resource type="Script" uid="uid://ccvhch13wkauy" path="res://Secnes/Overworld/menu/stat.gd" id="8_x13iy"]
+[ext_resource type="Script" uid="uid://c2tkuhkxumohv" path="res://Secnes/Overworld/menu/stat/label.gd" id="9_x13iy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1v02e"]
+paragraph_spacing = 5.0
+font = ExtResource("5_x5wvu")
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_6xy6t")
+
+[node name="up" type="Node2D" parent="."]
+visible = false
+script = ExtResource("2_17q2m")
+
+[node name="MenuUp" type="Sprite2D" parent="up"]
+position = Vector2(111, 188)
+texture = ExtResource("1_mjk6w")
+
+[node name="name" type="Label" parent="up"]
+offset_left = 55.0
+offset_top = 64.0
+offset_right = 151.0
+offset_bottom = 98.0
+text = "AAAAA"
+label_settings = ExtResource("2_m68np")
+script = ExtResource("3_4otcf")
+metadata/_edit_use_anchors_ = true
+
+[node name="mainstat" type="Label" parent="up"]
+offset_left = 55.0
+offset_top = 103.0
+offset_right = 133.0
+offset_bottom = 149.0
+text = "LV 1
+HP 20/20
+G 0"
+label_settings = SubResource("LabelSettings_1v02e")
+script = ExtResource("6_8k8fj")
+
+[node name="stat" type="Control" parent="up"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("8_x13iy")
+
+[node name="broad" type="Sprite2D" parent="up/stat"]
+position = Vector2(367, 237)
+texture = ExtResource("7_ihomd")
+
+[node name="Label" type="Label" parent="up/stat"]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 85.0
+offset_right = 502.0
+offset_bottom = 416.0
+text = "\"AAAAA\"
+
+LV 1
+HP 20/20
+"
+label_settings = ExtResource("8_17q2m")
+script = ExtResource("9_x13iy")
+
+[node name="down" type="Node2D" parent="."]
+script = ExtResource("2_17q2m")
+
+[node name="MenuDown" type="Sprite2D" parent="down"]
+position = Vector2(110, 304)
+texture = ExtResource("2_xbtv2")
+
+[node name="name" type="Label" parent="down"]
+offset_left = 55.0
+offset_top = 335.0
+offset_right = 151.0
+offset_bottom = 369.0
+text = "AAAA"
+label_settings = ExtResource("2_m68np")
+script = ExtResource("3_4otcf")
+metadata/_edit_use_anchors_ = true
+
+[node name="mainstat" type="Label" parent="down"]
+offset_left = 55.0
+offset_top = 374.0
+offset_right = 133.0
+offset_bottom = 420.0
+text = "LV 1
+HP 20/20
+G 0"
+label_settings = SubResource("LabelSettings_1v02e")
+script = ExtResource("6_8k8fj")
+
+[node name="stat" type="Control" parent="down"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("8_x13iy")
+
+[node name="broad" type="Sprite2D" parent="down/stat"]
+position = Vector2(367, 255)
+texture = ExtResource("7_ihomd")
+
+[node name="Label" type="Label" parent="down/stat"]
+layout_mode = 0
+offset_left = 219.0
+offset_top = 103.0
+offset_right = 502.0
+offset_bottom = 434.0
+text = "\"AAAAA\"
+
+LV 1
+HP 20/20
+"
+label_settings = ExtResource("8_17q2m")
+script = ExtResource("9_x13iy")
+
+[node name="main" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_dm3q2")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="main"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.2
+anchor_bottom = 0.2
+offset_left = 97.0
+offset_top = 182.0
+offset_right = 156.0
+offset_bottom = 216.0
+text = "menu_item"
+label_settings = ExtResource("2_m68np")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="main"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.25
+anchor_bottom = 0.25
+offset_left = 97.0
+offset_top = 252.0
+offset_right = 156.0
+offset_bottom = 286.0
+text = "menu_call"
+label_settings = ExtResource("2_m68np")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="main"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.225
+anchor_bottom = 0.225
+offset_left = 97.0
+offset_top = 217.0
+offset_right = 156.0
+offset_bottom = 251.0
+text = "menu_stat"
+label_settings = ExtResource("2_m68np")
+metadata/_edit_use_anchors_ = true
+
+[node name="Heart" type="Sprite2D" parent="."]
+position = Vector2(76, 208)
+scale = Vector2(2, 2)
+texture = ExtResource("5_4otcf")

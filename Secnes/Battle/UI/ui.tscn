@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjo4fe5m12udc"]
+
+[ext_resource type="Script" uid="uid://cr5hie5ba54nj" path="res://Secnes/Battle/UI/ui.gd" id="1_5idvd"]
+[ext_resource type="FontFile" uid="uid://c4egpres5rovo" path="res://Fonts/ui.ttf" id="2_p07lq"]
+[ext_resource type="Texture2D" uid="uid://c4n3tokjtmiit" path="res://Sprites/UI/HP.png" id="3_u03v3"]
+[ext_resource type="Texture2D" uid="uid://w3ukewq3w5ue" path="res://Sprites/pixel.png" id="4_k637c"]
+
+[node name="UI" type="Node2D"]
+script = ExtResource("1_5idvd")
+
+[node name="Name" type="Label" parent="."]
+offset_left = 31.0
+offset_top = 399.0
+offset_right = 71.0
+offset_bottom = 423.0
+theme_override_fonts/font = ExtResource("2_p07lq")
+theme_override_font_sizes/font_size = 24
+
+[node name="Hp" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_p07lq")
+theme_override_font_sizes/font_size = 24
+
+[node name="SprHp" type="Sprite2D" parent="."]
+position = Vector2(253, 409)
+texture = ExtResource("3_u03v3")
+
+[node name="BottomHp" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(276, 409)
+texture = ExtResource("4_k637c")
+offset = Vector2(0.5, 0)
+
+[node name="TopHp" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 0, 1)
+position = Vector2(276, 409)
+texture = ExtResource("4_k637c")
+offset = Vector2(0.5, 0)

@@ -1,0 +1,102 @@
+[gd_scene load_steps=7 format=3 uid="uid://bkirfroq7hovb"]
+
+[ext_resource type="Texture2D" uid="uid://cjsfb3cb0jeou" path="res://Sprites/overworld/saveui.png" id="1_mvs81"]
+[ext_resource type="Script" uid="uid://s27oxk8yufa7" path="res://Secnes/Overworld/saveui/save.gd" id="1_wy82a"]
+[ext_resource type="FontFile" uid="uid://dm4bqw5xv1ryg" path="res://Fonts/DTM-Sans.otf" id="2_f60t5"]
+[ext_resource type="Script" uid="uid://cot00bo4hy7ow" path="res://Secnes/Overworld/saveui/text.gd" id="3_hyuw8"]
+[ext_resource type="LabelSettings" uid="uid://384aj5vbbkb" path="res://Styte/labelstylesans.tres" id="4_1ba0o"]
+[ext_resource type="Texture2D" uid="uid://crxice6hem8fe" path="res://Sprites/overworld/heart_ow.png" id="4_hyuw8"]
+
+[node name="Save" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wy82a")
+
+[node name="Saveui" type="Sprite2D" parent="."]
+position = Vector2(320, 240)
+texture = ExtResource("1_mvs81")
+
+[node name="Text" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_hyuw8")
+
+[node name="Name" type="Label" parent="Text"]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 173.0
+offset_right = 234.0
+offset_bottom = 205.0
+text = "EMPTY"
+label_settings = ExtResource("4_1ba0o")
+
+[node name="Lv" type="Label" parent="Text"]
+layout_mode = 0
+offset_left = 317.0
+offset_top = 173.0
+offset_right = 409.0
+offset_bottom = 205.0
+text = "LV 0"
+label_settings = ExtResource("4_1ba0o")
+
+[node name="Time" type="Label" parent="Text"]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 173.0
+offset_right = 533.0
+offset_bottom = 205.0
+text = "0:00"
+label_settings = ExtResource("4_1ba0o")
+
+[node name="Room" type="Label" parent="Text"]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 210.0
+offset_right = 234.0
+offset_bottom = 242.0
+theme_override_fonts/font = ExtResource("2_f60t5")
+theme_override_font_sizes/font_size = 26
+text = "--"
+
+[node name="Save" type="Label" parent="Text"]
+layout_mode = 0
+offset_left = 142.0
+offset_top = 273.0
+offset_right = 234.0
+offset_bottom = 305.0
+text = "saving_save"
+label_settings = ExtResource("4_1ba0o")
+horizontal_alignment = 2
+
+[node name="Return" type="Label" parent="Text"]
+layout_mode = 0
+offset_left = 322.0
+offset_top = 274.0
+offset_right = 437.0
+offset_bottom = 306.0
+text = "saving_return"
+label_settings = ExtResource("4_1ba0o")
+horizontal_alignment = 2
+
+[node name="Saved" type="Label" parent="Text"]
+visible = false
+layout_mode = 0
+offset_left = 176.0
+offset_top = 274.0
+offset_right = 305.0
+offset_bottom = 306.0
+theme_override_fonts/font = ExtResource("2_f60t5")
+theme_override_font_sizes/font_size = 26
+text = "saving_ok"
+
+[node name="HeartOw" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(160, 289)
+scale = Vector2(2, 2)
+texture = ExtResource("4_hyuw8")

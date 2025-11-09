@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dg4s5jlou322y"]
+
+[ext_resource type="Script" uid="uid://ixgumqke1kav" path="res://Secnes/Overworld/objects/hurt/area.gd" id="1_1bpxm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5h5vu"]
+size = Vector2(45, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4nee"]
+size = Vector2(43, 29)
+
+[node name="Hurt" type="Node2D"]
+
+[node name="Area" type="Area2D" parent="."]
+script = ExtResource("1_1bpxm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area"]
+shape = SubResource("RectangleShape2D_5h5vu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Area"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area/StaticBody2D"]
+shape = SubResource("RectangleShape2D_q4nee")

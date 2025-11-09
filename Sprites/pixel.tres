@@ -1,0 +1,5 @@
+[gd_resource type="RectangleShape2D" load_steps=0 format=3 uid="uid://bmwbm8crmq20"]
+
+[resource]
+resource_local_to_scene = true
+size = Vector2(1, 1)

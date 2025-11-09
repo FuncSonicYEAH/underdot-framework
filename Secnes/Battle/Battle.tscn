@@ -1,0 +1,79 @@
+[gd_scene load_steps=11 format=3 uid="uid://dyp4sk2ke55sj"]
+
+[ext_resource type="Script" uid="uid://b2go1f1bney84" path="res://Secnes/Battle/battle.gd" id="1_8tduc"]
+[ext_resource type="PackedScene" uid="uid://d2tlfqqqdul8u" path="res://Secnes/Battle/arena/arena.tscn" id="1_hugcb"]
+[ext_resource type="PackedScene" uid="uid://cjo4fe5m12udc" path="res://Secnes/Battle/UI/ui.tscn" id="2_8tduc"]
+[ext_resource type="PackedScene" uid="uid://cbnsqmjgk7nbp" path="res://Secnes/Battle/menu/menu.tscn" id="3_j8gtb"]
+[ext_resource type="PackedScene" uid="uid://bdi8ba2ni1nfs" path="res://Secnes/Battle/heart/heart.tscn" id="4_qvpjb"]
+[ext_resource type="PackedScene" uid="uid://bde5ka1m7besv" path="res://System/typer/TypewriterBase.tscn" id="5_phgrc"]
+[ext_resource type="Script" uid="uid://c7gqwqf83vs7w" path="res://Secnes/Battle/enemy/enemy.gd" id="5_qvpjb"]
+[ext_resource type="Script" uid="uid://dqt5suu22af2f" path="res://Secnes/Battle/UI/control.gd" id="6_j8gtb"]
+[ext_resource type="PackedScene" uid="uid://eoyb2holpctm" path="res://System/typer/TyperwriterEnemy.tscn" id="6_u8gpe"]
+[ext_resource type="FontVariation" uid="uid://bug5lrd54yj13" path="res://Fonts/DTM-Spacing/DTM-BattleLabel.tres" id="8_u8gpe"]
+
+[node name="Battle" type="Node2D"]
+script = ExtResource("1_8tduc")
+
+[node name="UI" parent="." instance=ExtResource("2_8tduc")]
+position = Vector2(0, 2)
+
+[node name="Menu" parent="." instance=ExtResource("3_j8gtb")]
+
+[node name="Arena" parent="." instance=ExtResource("1_hugcb")]
+unique_name_in_owner = true
+
+[node name="Enemy" type="Node2D" parent="."]
+script = ExtResource("5_qvpjb")
+
+[node name="EnemyDialog" parent="Enemy" instance=ExtResource("6_u8gpe")]
+position = Vector2(500, 112)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 640.0
+offset_bottom = 480.0
+script = ExtResource("6_j8gtb")
+
+[node name="Typer" parent="Control" instance=ExtResource("5_phgrc")]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 256.0
+offset_right = 609.0
+offset_bottom = 384.0
+
+[node name="Fight" type="Control" parent="Control"]
+anchors_preset = 0
+offset_left = 31.0
+offset_top = 256.0
+offset_right = 608.0
+offset_bottom = 368.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Fight"]
+visible = false
+layout_mode = 0
+offset_top = 4.0
+offset_right = 587.0
+offset_bottom = 132.0
+
+[node name="Label" type="Label" parent="Control/Fight/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_u8gpe")
+theme_override_font_sizes/font_size = 27
+text = "* 敌人1"
+
+[node name="Label2" type="Label" parent="Control/Fight/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_u8gpe")
+theme_override_font_sizes/font_size = 27
+text = "* 敌人2"
+
+[node name="Label3" type="Label" parent="Control/Fight/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_u8gpe")
+theme_override_font_sizes/font_size = 27
+text = "* 敌人3"
+
+[node name="Heart" parent="." instance=ExtResource("4_qvpjb")]
+unique_name_in_owner = true
+position = Vector2(48, 456)

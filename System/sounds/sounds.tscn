@@ -1,0 +1,74 @@
+[gd_scene load_steps=19 format=3 uid="uid://b6ksyetlqjikn"]
+
+[ext_resource type="Script" uid="uid://cdxl0lxmusyya" path="res://System/sounds/sounds.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://bmyqxvs3ynloe" path="res://Audio/Sounds/choose.wav" id="2"]
+[ext_resource type="AudioStream" uid="uid://bs767kvfe11d7" path="res://Audio/Sounds/confirm.wav" id="3"]
+[ext_resource type="AudioStream" uid="uid://d2eycscqxddai" path="res://Audio/Sounds/uifont.wav" id="4"]
+[ext_resource type="AudioStream" uid="uid://bfuqiijw06r4q" path="res://Audio/Sounds/slice.wav" id="5"]
+[ext_resource type="AudioStream" uid="uid://clx3mpo40wpbw" path="res://Audio/Sounds/runaway.wav" id="6"]
+[ext_resource type="AudioStream" uid="uid://dlcm6pw6gkucg" path="res://Audio/Sounds/logo.ogg" id="7"]
+[ext_resource type="AudioStream" uid="uid://bcbry028p8vde" path="res://Audio/Sounds/hit.wav" id="8"]
+[ext_resource type="AudioStream" uid="uid://bc8o8l1lts27i" path="res://Audio/Sounds/heal.wav" id="9"]
+[ext_resource type="AudioStream" uid="uid://b05hexithkquw" path="res://Audio/Sounds/heartbeatbreaker.wav" id="10"]
+[ext_resource type="AudioStream" uid="uid://dbybqtd7y81cp" path="res://Audio/Sounds/heartsplosion.wav" id="11"]
+[ext_resource type="AudioStream" uid="uid://cprjf7m5n6jd6" path="res://Audio/Sounds/monster.wav" id="12"]
+[ext_resource type="AudioStream" uid="uid://bp304gvr1h3xx" path="res://Audio/Sounds/encounter_1.wav" id="13"]
+[ext_resource type="AudioStream" uid="uid://c1x14msrewrjd" path="res://Audio/Sounds/encounter_2.wav" id="14"]
+[ext_resource type="AudioStream" uid="uid://pdjpqhapuktw" path="res://Audio/Sounds/encounter_3.wav" id="15"]
+[ext_resource type="AudioStream" uid="uid://b2vxrcly5huc7" path="res://Audio/Sounds/sans.ogg" id="16"]
+[ext_resource type="AudioStream" uid="uid://c15oif0gu84uq" path="res://Audio/Sounds/gasterfire.wav" id="17"]
+[ext_resource type="AudioStream" uid="uid://cmbdm52tb3t6u" path="res://Audio/Sounds/gasterintro.wav" id="18"]
+
+[node name="Sounds" type="Node"]
+script = ExtResource("1")
+
+[node name="choose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2")
+
+[node name="confirm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3")
+
+[node name="ui" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4")
+
+[node name="slice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5")
+
+[node name="runaway" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6")
+
+[node name="logo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7")
+
+[node name="hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8")
+
+[node name="heal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9")
+
+[node name="heartbeatbreaker" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10")
+
+[node name="heartsplosion" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11")
+
+[node name="monster" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12")
+
+[node name="encounter_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13")
+
+[node name="encounter_2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14")
+
+[node name="encounter_3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15")
+
+[node name="sans" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16")
+
+[node name="gasterfire" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17")
+
+[node name="gasterintro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18")

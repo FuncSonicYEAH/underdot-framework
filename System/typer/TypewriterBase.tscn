@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bde5ka1m7besv"]
+
+[ext_resource type="FontVariation" uid="uid://ctblywm7558o3" path="res://Fonts/DTM-Spacing/DTM-Normal.tres" id="1_hi057"]
+[ext_resource type="Script" uid="uid://pcoh7terml2e" path="res://System/typer/TypewriterBase.gd" id="3_2i3d6"]
+
+[node name="Typer" type="RichTextLabel"]
+offset_right = 640.0
+offset_bottom = 144.0
+theme_override_fonts/normal_font = ExtResource("1_hi057")
+theme_override_fonts/mono_font = ExtResource("1_hi057")
+theme_override_font_sizes/normal_font_size = 27
+theme_override_font_sizes/mono_font_size = 27
+bbcode_enabled = true
+scroll_active = false
+script = ExtResource("3_2i3d6")
