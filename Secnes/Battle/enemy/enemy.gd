@@ -1,17 +1,28 @@
 extends Node2D
 
-@export_subgroup("Enemy Info")
-@export var isactive = [false, false, false]
-@export var enemy = ["","",""]
-@export var maxhp = [0,0,0]
-@export var hp = [0,0,0]
-@export var can_spare = [false, false, false]
+@export var ename: String = "Enemy"
+var hp: int = 0
+@export var max_hp: int = 10
+@export var can_spare: bool = false
 
-@export_subgroup("Enemy Action")
-@export var act = [["","","","","",""],["","","","","",""],["","","","","",""]]
-@export var actdialog = [["","","","","",""],["","","","","",""],["","","","","",""]]
-
+@export var acts: Array[String] = ["","","","","",""]
+@export var act_dialogs: Array[String] = ["","","","","",""]
 
 func _ready() -> void:
-	var perfix = "[font=res://Fonts/SANS-Spacing/SANS-Btdialog.tres][font_size=16]"
-	$EnemyDialog._add_dialog(perfix + "Hello[speed=0.6]...[/speed]\nThis is a test[pause][clear]" + perfix + "Could you please edit me?[wait=2][end]")
+	hp = max_hp
+
+func get_display_name() -> String:
+	return ename if ename else ""
+
+func get_display_acts(enemy: int) -> String:
+	return "* " + acts[enemy] if acts[enemy] else ""
+
+func get_status() -> Dictionary:
+	return {
+		"name": ename,
+		"hp": hp,
+		"max_hp": max_hp,
+		"can_spare": can_spare,
+		"acts": acts.duplicate(),
+		"act_dialogs": act_dialogs.duplicate()
+	}

@@ -1,15 +1,20 @@
-[gd_scene load_steps=11 format=3 uid="uid://dyp4sk2ke55sj"]
+[gd_scene load_steps=16 format=3 uid="uid://dyp4sk2ke55sj"]
 
 [ext_resource type="Script" uid="uid://b2go1f1bney84" path="res://Secnes/Battle/battle.gd" id="1_8tduc"]
 [ext_resource type="PackedScene" uid="uid://d2tlfqqqdul8u" path="res://Secnes/Battle/arena/arena.tscn" id="1_hugcb"]
 [ext_resource type="PackedScene" uid="uid://cjo4fe5m12udc" path="res://Secnes/Battle/UI/ui.tscn" id="2_8tduc"]
 [ext_resource type="PackedScene" uid="uid://cbnsqmjgk7nbp" path="res://Secnes/Battle/menu/menu.tscn" id="3_j8gtb"]
 [ext_resource type="PackedScene" uid="uid://bdi8ba2ni1nfs" path="res://Secnes/Battle/heart/heart.tscn" id="4_qvpjb"]
+[ext_resource type="Script" uid="uid://b867f0ycdcohm" path="res://Secnes/Battle/UI/enemy_index.gd" id="5_iij5i"]
 [ext_resource type="PackedScene" uid="uid://bde5ka1m7besv" path="res://System/typer/TypewriterBase.tscn" id="5_phgrc"]
-[ext_resource type="Script" uid="uid://c7gqwqf83vs7w" path="res://Secnes/Battle/enemy/enemy.gd" id="5_qvpjb"]
 [ext_resource type="Script" uid="uid://dqt5suu22af2f" path="res://Secnes/Battle/UI/control.gd" id="6_j8gtb"]
 [ext_resource type="PackedScene" uid="uid://eoyb2holpctm" path="res://System/typer/TyperwriterEnemy.tscn" id="6_u8gpe"]
 [ext_resource type="FontVariation" uid="uid://bug5lrd54yj13" path="res://Fonts/DTM-Spacing/DTM-BattleLabel.tres" id="8_u8gpe"]
+[ext_resource type="Script" uid="uid://dtjbjbyyngv5w" path="res://Secnes/Battle/UI/menu/act/fight.gd" id="9_1jmnr"]
+[ext_resource type="Script" uid="uid://c5vlx34fuhlrm" path="res://Secnes/Battle/UI/menu/act/enemyname.gd" id="10_iij5i"]
+[ext_resource type="Script" uid="uid://bklf6kn45ca24" path="res://Secnes/Battle/UI/menu/fight/act.gd" id="12_cq5pu"]
+[ext_resource type="Script" uid="uid://cu5ypu40a2ftb" path="res://Secnes/Battle/UI/menu/fight/enemyact.gd" id="13_1mtj8"]
+[ext_resource type="Script" uid="uid://bvtava46o1kco" path="res://Secnes/Battle/UI/menu/fight/enemyname.gd" id="13_msar6"]
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1_8tduc")
@@ -23,7 +28,9 @@ position = Vector2(0, 2)
 unique_name_in_owner = true
 
 [node name="Enemy" type="Node2D" parent="."]
-script = ExtResource("5_qvpjb")
+script = ExtResource("5_iij5i")
+
+[node name="EnemyContainer" type="Node2D" parent="Enemy"]
 
 [node name="EnemyDialog" parent="Enemy" instance=ExtResource("6_u8gpe")]
 position = Vector2(500, 112)
@@ -43,36 +50,136 @@ offset_right = 609.0
 offset_bottom = 384.0
 
 [node name="Fight" type="Control" parent="Control"]
+visible = false
 anchors_preset = 0
 offset_left = 31.0
 offset_top = 256.0
 offset_right = 608.0
 offset_bottom = 368.0
+script = ExtResource("9_1jmnr")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/Fight"]
-visible = false
+[node name="enemy" type="VBoxContainer" parent="Control/Fight"]
 layout_mode = 0
 offset_top = 4.0
 offset_right = 587.0
 offset_bottom = 132.0
+script = ExtResource("10_iij5i")
 
-[node name="Label" type="Label" parent="Control/Fight/VBoxContainer"]
+[node name="Label" type="Label" parent="Control/Fight/enemy"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_u8gpe")
 theme_override_font_sizes/font_size = 27
-text = "* 敌人1"
+text = "* enemy 1"
 
-[node name="Label2" type="Label" parent="Control/Fight/VBoxContainer"]
+[node name="Label2" type="Label" parent="Control/Fight/enemy"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_u8gpe")
 theme_override_font_sizes/font_size = 27
-text = "* 敌人2"
+text = "* enemy 2"
 
-[node name="Label3" type="Label" parent="Control/Fight/VBoxContainer"]
+[node name="Label3" type="Label" parent="Control/Fight/enemy"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_u8gpe")
 theme_override_font_sizes/font_size = 27
-text = "* 敌人3"
+text = "* enemy 3"
+
+[node name="Act" type="Control" parent="Control"]
+visible = false
+anchors_preset = 0
+offset_left = 57.0
+offset_top = 267.0
+offset_right = 634.0
+offset_bottom = 379.0
+script = ExtResource("12_cq5pu")
+
+[node name="enemy" type="VBoxContainer" parent="Control/Act"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 588.0
+offset_bottom = 132.0
+script = ExtResource("13_msar6")
+
+[node name="Label" type="Label" parent="Control/Act/enemy"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_u8gpe")
+theme_override_font_sizes/font_size = 27
+text = "* enemy 1"
+
+[node name="Label2" type="Label" parent="Control/Act/enemy"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_u8gpe")
+theme_override_font_sizes/font_size = 27
+text = "* enemy 2"
+
+[node name="Label3" type="Label" parent="Control/Act/enemy"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_u8gpe")
+theme_override_font_sizes/font_size = 27
+text = "* enemy 3"
+
+[node name="enemyact" type="Control" parent="Control/Act"]
+anchors_preset = 0
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 588.0
+offset_bottom = 132.0
+script = ExtResource("13_1mtj8")
+
+[node name="act1" type="Label" parent="Control/Act/enemyact"]
+layout_mode = 0
+offset_right = 97.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource("8_u8gpe")
+theme_override_font_sizes/font_size = 27
+text = "* act1"
+
+[node name="act2" type="Label" parent="Control/Act/enemyact"]
+layout_mode = 0
+offset_left = 259.0
+offset_right = 356.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource("8_u8gpe")
+theme_override_font_sizes/font_size = 27
+text = "* act4"
+
+[node name="act3" type="Label" parent="Control/Act/enemyact"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 97.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("8_u8gpe")
+theme_override_font_sizes/font_size = 27
+text = "* act2"
+
+[node name="act4" type="Label" parent="Control/Act/enemyact"]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 97.0
+offset_bottom = 92.0
+theme_override_fonts/font = ExtResource("8_u8gpe")
+theme_override_font_sizes/font_size = 27
+text = "* act3"
+
+[node name="act5" type="Label" parent="Control/Act/enemyact"]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 32.0
+offset_right = 356.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("8_u8gpe")
+theme_override_font_sizes/font_size = 27
+text = "* act5"
+
+[node name="act6" type="Label" parent="Control/Act/enemyact"]
+layout_mode = 0
+offset_left = 259.0
+offset_top = 64.0
+offset_right = 356.0
+offset_bottom = 92.0
+theme_override_fonts/font = ExtResource("8_u8gpe")
+theme_override_font_sizes/font_size = 27
+text = "* act6"
 
 [node name="Heart" parent="." instance=ExtResource("4_qvpjb")]
 unique_name_in_owner = true

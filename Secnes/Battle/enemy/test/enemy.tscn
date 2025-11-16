@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cye8qd3jtdure"]
+
+[ext_resource type="Script" uid="uid://c5xg6e5chrvas" path="res://Secnes/Battle/enemy/test/test.gd" id="1_sf81e"]
+[ext_resource type="Texture2D" uid="uid://crxice6hem8fe" path="res://Sprites/overworld/heart_ow.png" id="2_wdtc5"]
+
+[node name="EnemyTest" type="Node2D"]
+script = ExtResource("1_sf81e")
+
+[node name="HeartOw" type="Sprite2D" parent="."]
+position = Vector2(147, 140)
+scale = Vector2(10.944445, 9.5)
+texture = ExtResource("2_wdtc5")

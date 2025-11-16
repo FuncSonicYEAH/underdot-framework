@@ -11,10 +11,10 @@ script = ExtResource("1_siqny")
 texture = ExtResource("2_ln4ec")
 
 [node name="Typer" parent="." instance=ExtResource("3_1g1ne")]
-offset_left = -263.0
-offset_top = -58.0
-offset_right = 281.0
-offset_bottom = 68.0
+offset_left = -259.0
+offset_top = -54.0
+offset_right = 285.0
+offset_bottom = 72.0
 
 [node name="Face" type="Sprite2D" parent="."]
 position = Vector2(-208, 0)

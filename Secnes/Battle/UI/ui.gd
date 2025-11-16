@@ -1,5 +1,5 @@
 extends Node2D
-@onready var player = %Player
+@onready var player = %Heart
 
 func _ready():
 	z_index = Global.index.ui

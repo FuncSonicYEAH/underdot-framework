@@ -1,15 +1,17 @@
 extends Node2D
 
 var choice = 0
+@onready var main = $".."
 @onready var heart = %Heart
 
 func _ready() -> void:
 	z_index = Global.index.button
 
 func _process(delta: float) -> void:
-	if Global.state.BattleState != Global.state.Battle.ENEMYTRUN:
+	if Global.state.BattleState != Global.state.Battle.ENEMYTRUN and main.menu_mode == main.menu.none:
 		select()
 		heart_position()
+		reruslt()
 
 func select():
 	if choice > 3:
@@ -32,3 +34,11 @@ func heart_position():
 			heart.position = Vector2(362,452)
 		3:
 			heart.position = Vector2(516,452)
+			
+func reruslt():
+	if Input.is_action_just_pressed("enter"):
+		match choice:
+			0:
+				main.menu_mode = main.menu.fight
+			1:
+				main.menu_mode = main.menu.act
